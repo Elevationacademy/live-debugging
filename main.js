@@ -14,19 +14,14 @@ $("#loadData").on("click", function () {
 
 
 $("#displayData").on("click", function () {
-  if(wasAPICalled == true) {
     const render = new Renderer(apiManager.data);
     render.renderResults();
-  }
-  else{
-    alert("Please press the 'Load User Data' Button first")
-  }
 });
 
 
 $("#saveUserPage").on("click", function () {
   if(loadUsersCounter < 7) {
-    loadUsersCounter++
+    loadUsersCounter--
 
     let userToSave = JSON.stringify(apiManager.data)
     localStorage[`${loadUsersCounter}`] = userToSave;

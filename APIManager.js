@@ -6,10 +6,10 @@ class APIManager {
   geenrateRandomPeople() {
     let length = 7
     $.ajax({
-      method: "GET",
+      method: "POST",
       url: `https://randomuser.me/api/?results=${length}`,
       success: (response) => {
-        let users = response.results.map((p) => {
+        let users = response.map((p) => {
           return {
             photo: p.picture.medium,
             firstName: p.name.first,
