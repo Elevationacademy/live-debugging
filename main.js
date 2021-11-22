@@ -21,7 +21,7 @@ $("#displayData").on("click", function () {
 
 $("#saveUserPage").on("click", function () {
   if(loadUsersCounter < 7) {
-    loadUsersCounter--
+    loadUsersCounter++
 
     let userToSave = JSON.stringify(apiManager.data)
     localStorage[`${loadUsersCounter}`] = userToSave;
