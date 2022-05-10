@@ -47,7 +47,7 @@ class APIManager {
     $.ajax({
       method: "GET",
       url: `https://pokeapi.co/api/v2/pokemon/${randomNum}`,
-      success: function(response){
+      success: (response) => {
         this.data.pokemonName = response.forms[0].name[0].toUpperCase() + response.forms[0].name.slice(1)
         const pokemonUrl = response.forms[0].url;
 

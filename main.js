@@ -14,8 +14,13 @@ $("#loadData").on("click", function () {
 
 
 $("#displayData").on("click", function () {
+  if(wasAPICalled == true) {
     const render = new Renderer(apiManager.data);
     render.renderResults();
+  }
+  else{
+    alert("Please press the 'Load User Data' Button first")
+  }
 });
 
 
