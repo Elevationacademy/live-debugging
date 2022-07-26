@@ -6,18 +6,18 @@ class Renderer {
   renderResults() {
     const ourData = this.data;
 
-    $("#user-container").empty();
+    $(".user-container").empty();
 
     var sourceForUser = $("#user-template").html();
     var templateForUser = Handlebars.compile(sourceForUser);
     var newHTMLforUser = templateForUser(ourData);
-    $("#user-container").append(newHTMLforUser);
+    $(".user-container").append(newHTMLforUser);
 
     $(".friends-container").empty();
 
     var sourceForFriends = $("#friends-template").html();
     var templateForFriends = Handlebars.compile(sourceForFriends);
-    var newHTMLforFriends = templateForFriends({ ourData });
+    var newHTMLforFriends = templateForFriends({friends: ourData.friends});
     $(".friends-container").append(newHTMLforFriends);
 
     $(".quote-container").empty();

@@ -1,9 +1,10 @@
 const apiManager = new APIManager();
-const click = 1;
 let loadUsersCounter = 0;
 let wasAPICalled = false;
 
-$("#loadData").on(click, function () {
+const loadDataButton = $("#loadData")
+
+loadDataButton.on("click", function () {
   wasAPICalled = true;
   apiManager.geenrateRandomPeople();
   apiManager.generateQuote();

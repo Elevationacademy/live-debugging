@@ -6,21 +6,21 @@ class APIManager {
   geenrateRandomPeople() {
     let length = 7;
     $.ajax({
-      method: "POST",
-      url: `https://randomuser.me/api/results=${length()}`,
-      success: function (response) {
+      method: "GET",
+      url: `https://randomuser.me/api?results=${length}`,
+      success: (response) => {
         let users = response.results.map((p) => {
           return {
             photo: p.picture.medium,
             firstName: p.name.first,
             lastName: p.name.last,
-            city: p.city,
+            city: p.location.city,
             state: p.location.state
           };
         });
 
         this.data.mainUser = users[0];
-        this.data.friends = users.slice(1, 6);
+        this.data.friends = users.slice(1, 7);
       },
       error: function (xhr, text, error) {
         console.log(text);
