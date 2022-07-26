@@ -8,7 +8,7 @@ class APIManager {
     $.ajax({
       method: "GET",
       url: `https://randomuser.me/api/?results=${length}`,
-      success: function(response) {
+      success: (response) => {
         let users = response.results.map((p) => {
           return {
             photo: p.picture.medium,
@@ -54,10 +54,10 @@ class APIManager {
         $.ajax({
           method: "GET",
           url: `${pokemonUrl}`,
-          error: (response) => {
+          success: (response) => {
             this.data.pokemonURL = response.sprites.front_default 
           },
-          success: function () {
+          error: function () {
             console.log("error");
           },
         })

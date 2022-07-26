@@ -27,7 +27,7 @@ class Renderer {
     
     var sourceForQuote = $('#quote-template').html();
     var templateForQuote = Handlebars.compile(sourceForQuote);
-    var newHTMLForQuote = templateForQuote({ourData}); 
+    var newHTMLForQuote = templateForQuote(ourData); 
     $('.quote-container').append(newHTMLForQuote);
 
 
