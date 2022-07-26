@@ -6,7 +6,7 @@ const loadDataButton = $("#loadData")
 
 loadDataButton.on("click", function () {
   wasAPICalled = true;
-  apiManager.geenrateRandomPeople();
+  apiManager.genrateRandomPeople();
   apiManager.generateQuote();
   apiManager.generatePokemon();
   apiManager.generateText();
@@ -14,7 +14,7 @@ loadDataButton.on("click", function () {
 
 $("#displayData").on("click", function () {
   if (wasAPICalled == true) {
-    const render = new Renderer(apiManager.data);
+    const render = Renderer();
     render.renderResults();
   } else {
     alert("Please press the 'Load User Data' Button first");

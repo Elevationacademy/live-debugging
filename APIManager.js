@@ -19,8 +19,8 @@ class APIManager {
           };
         });
 
-        this.data.mainUser = users[0];
-        this.data.friends = users.slice(1, 7);
+        data.mainUser = users[0];
+        data.friends = users.slice(1, 7);
       },
       error: function (xhr, text, error) {
         console.log(text);
